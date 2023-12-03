@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="YELP" id="Project-873" database="Redshift" >
+	<schema name="yelp" >
+		<table name="business" prior="tbl" >
+			<column name="business_id" type="varchar" length="22" jt="12" mandatory="y" />
+			<column name="name" type="varchar" length="100" jt="12" />
+			<column name="address" type="varchar" length="100" jt="12" />
+			<column name="city" type="varchar" length="100" jt="12" />
+			<column name="state" type="varchar" length="2" jt="12" />
+			<column name="postal_code" type="varchar" length="15" jt="12" />
+			<column name="latitude" type="decimal" jt="3" />
+			<column name="longitude" type="decimal" jt="3" />
+			<column name="is_open" type="decimal" jt="3" />
+			<column name="byappointmentonly" type="varchar" length="100" jt="12" />
+			<column name="businessacceptscreditcards" type="varchar" length="100" jt="12" />
+			<column name="bikeparking" type="varchar" length="100" jt="12" />
+			<column name="restaurantspricerange2" type="varchar" length="100" jt="12" />
+			<column name="coatcheck" type="varchar" length="100" jt="12" />
+			<column name="restaurantstakeout" type="varchar" length="100" jt="12" />
+			<column name="restaurantsdelivery" type="varchar" length="100" jt="12" />
+			<column name="caters" type="varchar" length="100" jt="12" />
+			<column name="wifi" type="varchar" length="10" jt="12" />
+			<column name="businessparking" type="varchar" length="10" jt="12" />
+			<column name="wheelchairaccessible" type="varchar" length="10" jt="12" />
+			<column name="happyhour" type="varchar" length="10" jt="12" />
+			<column name="outdoorseating" type="varchar" length="15" jt="12" />
+			<column name="hastv" type="varchar" length="15" jt="12" />
+			<column name="restaurantsreservations" type="varchar" length="100" jt="12" />
+			<column name="dogsallowed" type="varchar" length="10" jt="12" />
+			<column name="alcohol" type="varchar" length="10" jt="12" />
+			<column name="goodforkids" type="varchar" length="10" jt="12" />
+			<column name="restaurantsattire" type="varchar" length="100" jt="12" />
+			<column name="ambience" type="varchar" length="100" jt="12" />
+			<column name="restaurantstableservice" type="varchar" length="15" jt="12" />
+			<column name="restaurantsgoodforgroups" type="varchar" length="15" jt="12" />
+			<column name="drivethru" type="varchar" length="10" jt="12" />
+			<column name="noiselevel" type="varchar" length="100" jt="12" />
+			<column name="goodformeal" type="varchar" length="100" jt="12" />
+			<column name="businessacceptsbitcoin" type="varchar" length="10" jt="12" />
+			<column name="smoking" type="varchar" length="10" jt="12" />
+			<column name="music" type="varchar" length="10" jt="12" />
+			<column name="goodfordancing" type="varchar" length="10" jt="12" />
+			<column name="acceptsinsurance" type="varchar" length="10" jt="12" />
+			<column name="bestnights" type="varchar" length="100" jt="12" />
+			<column name="byob" type="varchar" length="10" jt="12" />
+			<column name="corkage" type="varchar" length="10" jt="12" />
+			<column name="byobcorkage" type="varchar" length="10" jt="12" />
+			<column name="hairspecializesin" type="varchar" length="100" jt="12" />
+			<column name="open24hours" type="varchar" length="10" jt="12" />
+			<column name="restaurantscounterservice" type="varchar" length="100" jt="12" />
+			<column name="agesallowed" type="varchar" length="100" jt="12" />
+			<column name="dietaryrestrictions" type="varchar" length="100" jt="12" />
+			<index name="pk_business" unique="PRIMARY_KEY" >
+				<column name="business_id" />
+			</index>
+		</table>
+		<table name="review_fact" prior="review" >
+			<column name="review_id" type="varchar" length="22" jt="12" mandatory="y" />
+			<column name="user_id" type="varchar" length="22" jt="12" />
+			<column name="business_id" type="varchar" length="22" jt="12" />
+			<column name="date_id" type="integer" jt="4" />
+			<column name="text" type="varchar" length="250" jt="12" />
+			<column name="useful" type="integer" jt="4" />
+			<column name="funny" type="integer" jt="4" />
+			<column name="cool" type="integer" jt="4" />
+			<index name="pk_review_fact" unique="PRIMARY_KEY" >
+				<column name="review_id" />
+			</index>
+			<index name="unq_review_fact_business_id" unique="UNIQUE_KEY" >
+				<column name="business_id" />
+			</index>
+			<fk name="fk_review_fact_business" to_schema="yelp" to_table="business" >
+				<fk_column name="business_id" pk="business_id" />
+			</fk>
+			<fk name="fk_review_fact_user" to_schema="yelp" to_table="user" >
+				<fk_column name="user_id" pk="user_id" />
+			</fk>
+		</table>
+		<table name="tip_fact" prior="fact" >
+			<column name="tip_id" type="integer" jt="4" mandatory="y" />
+			<column name="date_id" type="integer" jt="4" />
+			<column name="compliment_count" type="integer" jt="4" />
+			<column name="business_id" type="varchar" length="22" jt="12" />
+			<column name="user_id" type="varchar" length="22" jt="12" />
+			<index name="pk_tip_fact" unique="PRIMARY_KEY" >
+				<column name="tip_id" />
+			</index>
+			<fk name="fk_tip_fact_business" to_schema="yelp" to_table="business" >
+				<fk_column name="business_id" pk="business_id" />
+			</fk>
+			<fk name="fk_tip_fact_user" to_schema="yelp" to_table="user" >
+				<fk_column name="user_id" pk="user_id" />
+			</fk>
+		</table>
+		<table name="user" prior="tbl" >
+			<column name="user_id" type="varchar" length="22" jt="12" mandatory="y" />
+			<column name="name" type="varchar" length="100" jt="12" />
+			<column name="review_count" type="integer" jt="4" />
+			<column name="yelping_since" type="integer" jt="4" />
+			<column name="friends" type="varchar" length="100" jt="12" />
+			<column name="useful" type="integer" jt="4" />
+			<column name="funny" type="integer" jt="4" />
+			<column name="cool" type="integer" jt="4" />
+			<column name="fans" type="integer" jt="4" />
+			<index name="pk_tbl" unique="PRIMARY_KEY" >
+				<column name="user_id" />
+			</index>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout-163f" show_relation="columns" >
+		<entity schema="yelp" name="business" color="C1D8EE" x="459" y="459" />
+		<entity schema="yelp" name="review_fact" color="C1D8EE" x="442" y="187" />
+		<entity schema="yelp" name="tip_fact" color="C1D8EE" x="68" y="459" />
+		<entity schema="yelp" name="user" color="C1D8EE" x="119" y="170" />
+		<callout x="51" y="51" pointer="Round" >
+			<comment><![CDATA[This is a layout - a diagram with tools.
+- Right-click the layout to create new tables. 
+- Double-click table headers to edit. 
+- For a better understanding of the schema, create multiple layouts.
+- Save the design to the model file, and deploy from 'Schema / Create into the database'.]]></comment>
+		</callout>
+	</layout>
+</project>
