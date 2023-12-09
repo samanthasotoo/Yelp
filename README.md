@@ -3,57 +3,51 @@
 Samantha Soto 
 
 ## Description
-This project is a data warehousing solution designed to consolidate, transform, and store large volumes of OTC market data for analytical purposes. It aims to provide a centralized repository for business intelligence and reporting.
+This project focuses on creating a sophisticated data warehousing solution tailored for analyzing Yelp Reviews. It aims to gather, transform, and store extensive Yelp Reviews data for in-depth behavioral analysis. The primary objective is to establish a central repository for insights into user behavior patterns, facilitating effective business intelligence and trend analysis. For the purposes of this project, I have only decided to look into categorical and numerical features instead of actual text data. 
 
 ## Business Problem 
 
-The Over-The-Counter (OTC) market refers to a decentralized trading environment, distinct from formal exchanges such as the NYSE or NASDAQ. It's a network where financial instruments, such as stocks, bonds, and derivatives, are traded directly between two parties without the oversight of an exchange. The OTC market is known to lack transparency & regulations; these variables can definitely contribute to higher potential returns but also comes with increased risks for buyers. 
+The project addresses the need for a comprehensive understanding of user behavior related to Yelp Reviews. Key questions include determining peak times for review submissions, trends in user engagement, and the historical growth of Yelp's popularity. By analyzing these aspects, businesses can gain valuable insights into customer engagement patterns, enabling them to tailor their marketing and operational strategies more effectively.
 
 
 
 ## Business Impact
 
-- Risks: Handling financial data is particularly tricky because we need to ensure strict secuirty measures to protect against data breaches and maintain privacy.
-- Costs: OTC market data constantly updates. To handle constant updates, a robust IT infrastructure is needed, which can handle high volumes of data transactions in real-time. Significant amounts of storage is needed & it needs to be protected.
-- Benefits: Analyzing the OTC market data can influence improved decision making processes and strategy developments for investors. Processing this data & storing it in a datawarehouse can act as a centralized repository for market data, including transaction prices, volumes, and counterparty details. This enhances transparency in price discovery. Further, analysts & stakeholders can look at historical data to discover patterns and they can further improve their investment strategies and risk management.  
-  - A successful implementation of the datawarehouse & analysis capabilities can improve decision making effiency by 5-10%. This can increase a company's profits due to better trading & investment decisions. 
+- Risks: Managing user-generated data entails ensuring accuracy, privacy, and compliance with data protection regulations.
+- Costs: The dynamic and voluminous nature of Yelp Reviews necessitates robust infrastructure for real-time data processing and substantial storage capacity.
+- Benefits: Analyzing user behavior trends from Yelp Reviews can inform businesses about peak engagement times, user preferences, and the effectiveness of their services or products. This knowledge can lead to improved customer service strategies, targeted marketing campaigns, and overall enhanced user experience.
+
 
 ## Business Persona 
 
-As mentioned, many can benefit from having access to this data in a centralized repository. Financial analysts and economists can use their data to forecast market trends, and advise on investments. This tool will also be immensely helpful to portfolio managers & traders who are the key decision makers and execute traders. This allows for real-time decision making, assessing risk more seamlessly -- this should lead to higher returns and effective portfolio diversification. 
+This data warehouse serves business analysts, marketers, and decision-makers who seek to understand and leverage user engagement patterns. By accessing a centralized source of analyzed user behavior, these professionals can make informed decisions to optimize their services and align them with user preferences and peak engagement periods. Further, market researchers can analyze trends in customer preferences & behaviors across categories and geographical locations. In addition, policy makers and urban planners can analyze trends in business popularity and customer preferences, they can make informed decisions about urban development, zoning, and local economic policies.
 
 ## The Data 
 
-OTC Market Data was provided by our professor who has permission to access it (the data is from OTC Markets Group). OTC Markets Group is an organization that specializes in collecting & distributing financial data for the OTC markets. The data we utilized for this project include the information on the securities and companies along with details on where these securities were traded. It also holds pricing information such as the closing bid & ask prices with their respective dates. 
-
-Our data size is around 4 GB - this suggests that there is a lot to analyze and can be used to make informed decisions on investments. However, due to cost limitations (and computational resources), processing this amount of data is challenging. It requires more storage space and computing power to extract & transform this data. 
+The Yelp Academic Dataset is publicly available on their website yelp.com/dataset/download. The data consists of 4 files: business, review, tip and user. Each of these files hold information on business attributes (such as location and categories), review counts, tips left by users on a business and user information. The dataset is quite large (it is about 8 GB total) and requires a good amount of computing power and datahandling in order to load into a datawarehouse. 
 
 ## Methods
+
 - Dimensional Modeling: creating a fact & dimension tables to model our data and to help us better understand the relationships between them.
-- The DbSchema can be found [Here](https://github.com/Pupat3l/OTC_4400/blob/main/DbSchema/OTC.dbs)
-
-<img width="632" alt="DbSchema" src=https://github.com/Pupat3l/OTC_4400/blob/main/DbSchema/DbSchema.jpeg>
-
-  
+  - dBSchema was used
+  - <img width="1005" alt="Screenshot 2023-12-09 at 6 22 17 PM" src="https://github.com/samanthasotoo/Yelp/assets/42002045/0b6cb383-109c-4931-a229-66cde1d4ab6c">  
 - Extract, Transform, Load (ETL) Processes for Data Integration
-  Diagram:
-  <img width="632" alt="Screenshot 2023-12-07 at 1 07 37 PM" src="https://github.com/Pupat3l/OTC_4400/assets/42002045/cddff691-aabf-4c1f-9838-7f7f2521bd97">
 
 ### Extract:
-- Professor provided us the data source in the .CSV format.
-- Python & Boto3 was used to upload our data from our local file system to Amazon Web Services Storage (S3)
-  [Extract.py script](https://github.com/Pupat3l/OTC_4400/blob/main/ETL/Extract.py)
+
+- Download the dataset from yelp.com/dataset/download & run a python script to unzip the file.
+- Python & Boto3 was used to upload my data to Amazon Web Services Storage (S3)
+
 
 ### Transform: 
-- Python & Boto3 (Python was used to transform our data, making sure all data types matched our schema & dropping anything unneccesary). We utilized Pandas to make any transformations (split up the original CSV file into dimensions) & then uploaded the individual dimensions back to S3 in CSV format.
-  [transform.py script](https://github.com/Pupat3l/OTC_4400/blob/main/ETL/transform.py)
+- Python & Boto3 (Python was used to transform my data, making sure all data types matched the schema & dropping anything unneccesary). We utilized Pandas to make any transformations (split up the original CSV file into dimensions) & then uploaded the individual dimensions back to S3 in CSV format.
+ 
 
 ### Load: 
 
-
-- We loaded our data into Amazon Web Services Datawarehouse (AWS Redshift Serverless), we had a predefined schema because of our dbSchema.
-- We performed combination of both drag and drop and automation to upload dimensions files to Datawarehouse from s3 bucket.
-  [load.py_script](https://github.com/Pupat3l/OTC_4400/blob/main/ETL/load.py)
+- I loaded my data into Amazon Web Services Datawarehouse (AWS Redshift Serverless), we had a predefined schema because of our dbSchema.
+- We performed combination of both drag and drop and automation to upload dimensions files to Datawarehouse from S3 bucket.
+- My data was running into errors while loading to AWS Redshift Serverless 
 
 ### Visualization:
 
