@@ -1,6 +1,8 @@
 # Yelp Reviews
 # Data Warehousing Project
 Samantha Soto 
+![image](https://github.com/samanthasotoo/Yelp/assets/42002045/39c0bbe2-6854-4ad1-af6b-ed3e41673ba1)
+
 
 ## Description
 This project focuses on creating a sophisticated data warehousing solution tailored for analyzing Yelp Reviews. It aims to gather, transform, and store extensive Yelp Reviews data for in-depth behavioral analysis. The primary objective is to establish a central repository for insights into user behavior patterns, facilitating effective business intelligence and trend analysis. For the purposes of this project, I have only decided to look into categorical and numerical features instead of actual text data. 
