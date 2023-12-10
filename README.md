@@ -72,7 +72,7 @@ The Yelp Academic Dataset is publicly available on their website yelp.com/datase
 - As you can see, there is an upward trend for share volume over years which indicates that the market interest is growing.
 
 ### Popular Days to Write Reviews
-<img width="1123" alt="Screenshot 2023-12-09 at 7 29 15 PM" src="https://github.com/samanthasotoo/Yelp/assets/42002045/7dfad98e-94d1-4973-9cfb-75faa0edd696">
+!<img width="1123" alt="Screenshot 2023-12-09 at 7 29 15 PM" src="https://github.com/samanthasotoo/Yelp/assets/42002045/7dfad98e-94d1-4973-9cfb-75faa0edd696">
 
 - The visualization above shows the most common days to publish reviews is on Sunday. This makes sense because it is the world's day to unwind and reflect on the week that has just passed. 
 
