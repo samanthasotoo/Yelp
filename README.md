@@ -48,8 +48,10 @@ The Yelp Academic Dataset is publicly available on their website yelp.com/datase
 ### Load: 
 
 - I loaded my data into Amazon Web Services Datawarehouse (AWS Redshift Serverless), we had a predefined schema because of our dbSchema.
-- We performed combination of both drag and drop and automation to upload dimensions files to Datawarehouse from S3 bucket.
-- My data was running into errors while loading to AWS Redshift Serverless 
+- I performed combination of both drag and drop and automation to upload dimensions files to Datawarehouse from S3 bucket. 
+- My data was running into errors while loading to AWS Redshift Serverlesss so I tried loading into Google BigQuery, which was more seamless.
+- I eventually was able to connect to AWS Redshift using my Python script.
+
 
 ### Visualization:
 
@@ -57,11 +59,10 @@ The Yelp Academic Dataset is publicly available on their website yelp.com/datase
 - The Tableau workbook is uploaded [here](https://github.com/Pupat3l/OTC_4400/blob/main/Tableau/OTC_Engineers.twb)
 - Following are the visualization created:
 
-#### Price Change over time
-![Visualization 1](https://github.com/Pupat3l/OTC_4400/blob/main/Tableau/Price_Change.png)
-- We created a visualization using Closing Best Ask Date and Price Change(calculation created in Tableau - Last Price - Open Price).
-- The visualization shows the price change for each commodity in OTC Market over time in months(1-12)
-- As you can see, December has the most negative price change and June has the most positive. Periodically Earnings report could be a reason for this change.
+#### Yelp Reviews Use Over time
+<img width="936" alt="Screenshot 2023-12-09 at 7 24 48 PM" src="https://github.com/samanthasotoo/Yelp/assets/42002045/3a25fb9b-40c5-4355-84a3-82ac0a3db044">
+- Plotted above is the amount of reviews written by users over the year along with a forecast as to how many reviews will be published in the coming years. As you can see, the number of reviews dropped drastically in 2020, this correlates to the global pandemic and having to be on lockdown for the whole year. 
+
   
 ### Share Volume over time
 ![Visualization 2](https://github.com/Pupat3l/OTC_4400/blob/main/Tableau/Share_Volume.png)
@@ -69,11 +70,10 @@ The Yelp Academic Dataset is publicly available on their website yelp.com/datase
 - The visualization shows Avg. Share Volume for each commodity in OTC Market over time in years. The y-axis is a logarithmic scale to view the data points better and the data can spread out more.
 - As you can see, there is an upward trend for share volume over years which indicates that the market interest is growing.
 
-### Bid-Ask spread over time
-![Visualization 3](https://github.com/Pupat3l/OTC_4400/blob/main/Tableau/Bid_Ask_spread.png)
-- We created a visualization using Closing Bid-Ask(calcualtion created in Tableau - Closing Bid Price - Closing Ask Price) and Closing Best Bid Date.
-- The visualization shows the Bid-Ask spread of each commodity in OTC Market over time in terms of days/month.
-- As you can see the values are negative which determines that people are good at negotiations. It also shows that on 8th day of the month, negotations are the best.
+### Popular Days to Write Reviews
+<img width="1123" alt="Screenshot 2023-12-09 at 7 29 15 PM" src="https://github.com/samanthasotoo/Yelp/assets/42002045/7dfad98e-94d1-4973-9cfb-75faa0edd696">
+
+- The visualization above shows the most common days to publish reviews is on Sunday. This makes sense because it is the world's day to unwind and reflect on the week that has just passed. 
 
 ### Trading Volume vs Price Change over time
 ![Visualization 4](https://github.com/Pupat3l/OTC_4400/blob/main/Tableau/Trading_Volume_vs_Price_Changes.png)
