@@ -60,7 +60,8 @@ The Yelp Academic Dataset is publicly available on their website yelp.com/datase
 - Following are the visualization created:
 
 #### Yelp Reviews Use Over time
-<img width="936" alt="Screenshot 2023-12-09 at 7 24 48 PM" src="https://github.com/samanthasotoo/Yelp/assets/42002045/3a25fb9b-40c5-4355-84a3-82ac0a3db044">
+!<img width="936" alt="Screenshot 2023-12-09 at 7 24 48 PM" src="https://github.com/samanthasotoo/Yelp/assets/42002045/3a25fb9b-40c5-4355-84a3-82ac0a3db044">
+
 - Plotted above is the amount of reviews written by users over the year along with a forecast as to how many reviews will be published in the coming years. As you can see, the number of reviews dropped drastically in 2020, this correlates to the global pandemic and having to be on lockdown for the whole year. 
 
   
