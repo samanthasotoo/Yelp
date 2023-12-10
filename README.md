@@ -56,7 +56,6 @@ The Yelp Academic Dataset is publicly available on their website yelp.com/datase
 ### Visualization:
 
 - We utilized Tableau to create visualizations using csv as the serving data.
-- The Tableau workbook is uploaded [here](https://github.com/Pupat3l/OTC_4400/blob/main/Tableau/OTC_Engineers.twb)
 - Following are the visualization created:
 
 #### Yelp Reviews Use Over time
