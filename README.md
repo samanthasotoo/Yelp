@@ -64,27 +64,26 @@ The Yelp Academic Dataset is publicly available on their website yelp.com/datase
 
 - Plotted above is the amount of reviews written by users over the year along with a forecast as to how many reviews will be published in the coming years. As you can see, the number of reviews dropped drastically in 2020, this correlates to the global pandemic and having to be on lockdown for the whole year. 
 
-  
-### Share Volume over time
-![Visualization 2](https://github.com/Pupat3l/OTC_4400/blob/main/Tableau/Share_Volume.png)
-- We created a visualization using Avg. Share Volume and Closing Inside Ask Price Date.
-- The visualization shows Avg. Share Volume for each commodity in OTC Market over time in years. The y-axis is a logarithmic scale to view the data points better and the data can spread out more.
-- As you can see, there is an upward trend for share volume over years which indicates that the market interest is growing.
 
 ### Popular Days to Write Reviews
 !<img width="1123" alt="Screenshot 2023-12-09 at 7 29 15 PM" src="https://github.com/samanthasotoo/Yelp/assets/42002045/7dfad98e-94d1-4973-9cfb-75faa0edd696">
 
 - The visualization above shows the most common days to publish reviews is on Sunday. This makes sense because it is the world's day to unwind and reflect on the week that has just passed. 
 
-### Trading Volume vs Price Change over time
-![Visualization 4](https://github.com/Pupat3l/OTC_4400/blob/main/Tableau/Trading_Volume_vs_Price_Changes.png)
-- We created visualization using Price Change and Avg. Share Volume and Previous Close Date.
-- The visualization shows the Avg. Share volume and Price Change for each commodity in OTC market over time in terms of years.
-- As you can see Avg. Share volume and last price are moving in the same direction indicates a increasing demand of shares and market confidence.
+### Most Reviews by State
+!<img width="265" alt="Screenshot 2023-12-09 at 7 58 37 PM" src="https://github.com/samanthasotoo/Yelp/assets/42002045/846eb54d-bb94-4f11-8cf1-fa9fdc2fde9a">
+
+- The visualization above shows the most reviews by state, as you can see most reviews are from PA. This is obviously because the yelp dataset does not have reviews from all states, but there might be the most in PA since it is closer to NYC. 
+
+### Ratings Based on WiFi
+!<img width="320" alt="Screenshot 2023-12-09 at 8 05 02 PM" src="https://github.com/samanthasotoo/Yelp/assets/42002045/b20084db-a0d1-4307-917d-293c65408492">
+
+Image above shows star ratings based on whether or not they have WiFi and if it is paid. Paid WiFi has lower ratings. 
 
 ### Dashboard combining all visualization
-![Visualization 5](https://github.com/Pupat3l/OTC_4400/blob/main/Tableau/Dashboard.png)
-- The Dashboard is an interactive visualization that shows real-time updates of all 4 visualization from above. There is also a filer in place for Status and Venue which helps visualize trends on different combinations of statuses and venues.
+!<img width="993" alt="Screenshot 2023-12-09 at 7 57 15 PM" src="https://github.com/samanthasotoo/Yelp/assets/42002045/04bf5bd0-9863-436a-ba9b-efd3133838e9">
+
+- The Dashboard is an interactive visualization that shows real-time updates of all visualization from above. 
 
 ## Tools 
 
